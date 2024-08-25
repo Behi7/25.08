@@ -1,0 +1,74 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+		
+		<!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xl-18 col-xxl-24">
+						<div class="row">
+							<div class="col-xl-15">
+								<div class="row">  
+									<div class="col-xl-12">
+										<div class="row">
+											<div class="col-xl-4 col-sm-6">
+												<div class="card bg-primary text-white">
+													<div class="card-header border-0">
+														<div class="revenue-date">
+															<span>Jami xodimlar</span>
+															<h4 class="text-white">{{count}}</h4>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-xl-4 col-sm-6">
+												<div class="card bg-secondary text-white">
+													<div class="card-header border-0">
+														<div class="revenue-date">
+															<span class="text-black">Oylik kirim</span>
+															<h4 class="text-black">$978.035</h4>
+														</div>
+														<div class="avatar-list avatar-list-stacked me-2">
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-xl-4 col-sm-6">
+												<div class="card bg-secondary text-red">
+													<div class="card-header border-0">
+														<div class="revenue-date">
+															<span class="text-red">Oylik chiqim</span>
+															<h4 class="text-red">$423.035</h4>
+														</div>
+														<div class="avatar-list avatar-list-stacked me-2">
+														</div>
+														
+													</div>
+												</div>
+											</div>
+										</div>	
+									</div>
+								</div>
+							</div>			
+						</div>
+					</div>
+					<div class="col-xl-3 respo col-xxl-4 col-lg-5">
+						<div class="row">
+							<div class="col-xl-12">
+								<div class="card my-calendar">
+									<div class="card-body schedules-cal p-2">
+										<input type="text" class="form-control d-none" id="datetimepicker1">
+									</div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+{% endblock %}
