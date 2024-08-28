@@ -17,9 +17,9 @@
                             <form method="post">
                                 {% csrf_token %}
                                 <div class="mb-3">
-                                    <input type="text" class="form-control input-rounded" placeholder="Nomi" value="{{ option.name }}" name="name">
+                                    <input type="text" class="form-control input-rounded" placeholder="Nomi" value="{{ update.name }}" name="name">
                                 </div>
-                                <a href="{% url 'listquestion' quiz.id %}"><button type="submit" class="btn btn-primary">saqlash</button></a>
+                                <a href="{% url 'listoption' quiz_id question_id %}"><button type="submit" class="btn btn-primary">saqlash</button></a>
                             </form>
                         </div>
                     </div>

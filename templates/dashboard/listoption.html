@@ -47,8 +47,8 @@
 														{% else %}
 														<td style="color: rgb(241, 113, 54);">{{option.name}}</td>
 														{% endif %}
-														<td><a href="#"><button class="btn btn-primary">Yangilash</button></a></td>
-														<td><a href="#"><button class="btn btn-danger">O'chirish</button></a></td>
+														<td><a href="{% url 'updateoption' quiz.id question.id option.id %}"><button class="btn btn-primary">Yangilash</button></a></td>
+														<td><a href="{% url 'deleteoption' quiz.id question.id option.id %}"><button class="btn btn-danger">O'chirish</button></a></td>
 													</tr>
 													{% endfor %}
 												</tbody>

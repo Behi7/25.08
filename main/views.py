@@ -113,3 +113,15 @@ def register_user(request):
     except:
         context={'error':'bunday login bor'}
     return render(request, 'dashboard/register.html', context)
+
+def deleteOption(request, quiz_id, question_id, id):
+    models.Option.objects.get(id=id).delete()
+    return redirect('listoption', quiz_id, question_id)
+
+def updateoption(request, quiz_id, question_id, id):
+    update = models.Option.objects.get(id=id)
+    if request.method == 'POST':
+        update.name = request.POST['name']
+        update.save()
+        return redirect('listoption', quiz_id, question_id)
+    return render(request, 'dashboard/createoption.html', {'update':update, 'quiz_id':quiz_id, 'question_id':question_id})
