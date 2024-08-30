@@ -12,6 +12,46 @@
 					<div class="demo-view">
 						<div class="container-fluid pt-0 ps-0 pe-lg-4 pe-0">
 							<div class="row">
+								<div class="col-xl-12">
+									<div class="row">
+										<div class="col-xl-4 col-sm-6">
+											<div class="card bg-primary text-white">
+												<div class="card-header border-0">
+													<div class="revenue-date">
+														<span>Test to'plaminig nomi</span>
+														<h4 class="text-white">{{quiz}}</h4>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xl-4 col-sm-6">
+											<div class="card bg-secondary text-white">
+												<div class="card-header border-0">
+													<div class="revenue-date">
+														<span class="text-black">Jami qatnashivchilar</span>
+														<h4 class="text-black">{{count_a}}</h4>
+														<a href="{% url 'detailquiz' quiz.id %}" class="btn btn-primary">Tafsilot</a>
+													</div>
+													<div class="avatar-list avatar-list-stacked me-2">
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xl-4 col-sm-6">
+											<div class="card bg-secondary text-red">
+												<div class="card-header border-0">
+													<div class="revenue-date">
+														<span class="text-red">Savollar soni</span>
+														<h4 class="text-red">{{count_q}}</h4>
+													</div>
+													<div class="avatar-list avatar-list-stacked me-2">
+													</div>
+													
+												</div>
+											</div>
+										</div>
+									</div>	
+								</div>
 					<!-- Column starts -->
                     <div class="col-xl-12">
                         <div class="card dz-card" id="bootstrap-table5">

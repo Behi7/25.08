@@ -1,0 +1,71 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <!-- container starts -->
+            <div class="container-fluid">
+				
+                <!-- row -->
+				<div class="element-area">
+					<div class="demo-view">
+						<div class="container-fluid pt-0 ps-0 pe-lg-4 pe-0">
+							<div class="row">
+					<!-- Column starts -->
+                    <div class="col-xl-12">
+                        <div class="card dz-card" id="bootstrap-table5">
+                            <div class="card-header flex-wrap d-flex justify-content-between  border-0">
+								<div>
+                                	<h4 class="card-title">Testlar</h4>
+								</div>
+							</div>
+                           	<!-- tab-content -->	
+							<div class="tab-content" id="myTabContent-4">
+								<div class="tab-pane fade show active" id="leftPosition" role="tabpanel" aria-labelledby="home-tab-4">
+									<div class="card-body pt-0">
+										
+										<div class="table-responsive">
+											
+											<table class="table table-bordered table-responsive-sm">
+												
+												<thead>
+													<tr>
+														<th>#</th>
+														<th>Test nomi</th>
+														<th>Savollar soni</th>
+                                                        <th>Javoblar soni</th>
+                                                        <th>Tog'ri javoblar</th>
+														<th>Harakat</th>
+													</tr>
+												</thead>
+												<tbody>
+													{% for answer in answers %}
+													<tr>
+														<th>{{forloop.counter}}</th>
+														<td>{{answer.author}}</td>
+														<td>{{answer.options}}</td>
+														<td><i style="color: green;">{{answer.correct}} </i> /<i style="color: brown;">{{answer.un_correct}}</i></td>
+                                                        <td>{{answer.charget}} %</td>
+														<td><a href="{% url 'detailanswer' answer.id %}" class="btn btn-primary">Ko'rish</a>
+															<a href="{% url 'deleteanswer' answer.id %}" class="btn btn-danger">O'chirish</a></td>
+													</tr>
+													{% endfor %}
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+						</div>
+							<!-- /tab-content -->		
+                           
+                        </div>
+                    </div>
+                    <!-- Column ends -->
+					
+				</div>
+					</div>
+				</div>			
+            </div>
+    </div>
+{% endblock %}

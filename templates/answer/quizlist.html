@@ -1,0 +1,64 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <!-- container starts -->
+            <div class="container-fluid">
+				
+                <!-- row -->
+				<div class="element-area">
+					<div class="demo-view">
+						<div class="container-fluid pt-0 ps-0 pe-lg-4 pe-0">
+							<div class="row">
+					<!-- Column starts -->
+                    <div class="col-xl-12">
+                        <div class="card dz-card" id="bootstrap-table5">
+                            <div class="card-header flex-wrap d-flex justify-content-between  border-0">
+								<div>
+                                	<h4 class="card-title">Testlar</h4>
+								</div>
+							</div>
+                           	<!-- tab-content -->	
+							<div class="tab-content" id="myTabContent-4">
+								<div class="tab-pane fade show active" id="leftPosition" role="tabpanel" aria-labelledby="home-tab-4">
+									<div class="card-body pt-0">
+										
+										<div class="table-responsive">
+											
+											<table class="table table-bordered table-responsive-sm">
+												
+												<thead>
+													<tr>
+														<th>#</th>
+														<th>Test nomi</th>
+														<th>Harakat</th>
+													</tr>
+												</thead>
+												<tbody>
+													{% for quiz in quizes %}
+													<tr>
+														<th>{{forloop.counter}}</th>
+														<td>{{quiz.name}}</td>
+														<td><a href="{% url 'getquiz' quiz.id %}"><button class="btn btn-primary">Test yechish</button></a></td>
+													</tr>
+													{% endfor %}
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+						</div>
+							<!-- /tab-content -->		
+                           
+                        </div>
+                    </div>
+                    <!-- Column ends -->
+					
+				</div>
+					</div>
+				</div>			
+            </div>
+    </div>
+{% endblock %}

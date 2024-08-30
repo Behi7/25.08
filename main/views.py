@@ -29,7 +29,8 @@ def deletequiz(request, id):
 def listquestion(request, quiz_id):
     quiz = models.Quiz.objects.get(id=quiz_id)
     questions = models.Question.objects.filter(quiz=quiz)
-    context = {'questions':questions, 'quiz':quiz}
+    count_q = len(questions)
+    context = {'questions':questions, 'quiz':quiz, 'count_q':count_q, 'count_a':len(models.Answer.objects.all())}
     return render(request, 'dashboard/listquestion.html', context)
 
 def listoption(request, quiz_id, id):
@@ -125,3 +126,21 @@ def updateoption(request, quiz_id, question_id, id):
         update.save()
         return redirect('listoption', quiz_id, question_id)
     return render(request, 'dashboard/createoption.html', {'update':update, 'quiz_id':quiz_id, 'question_id':question_id})
+
+def quizdetail(request, id):
+    quiz = models.Quiz.objects.get(id=id)
+    answers = models.Answer.objects.filter(quiz = quiz)
+    for answer in answers:
+        answerdetail = models.AnswerDetail.objects.filter(answer=answer)
+        answer.options = len(answerdetail)
+        filtered_correct = 0
+        for obj in answerdetail:
+            if obj.is_correct == True:
+                filtered_correct+=1
+        answer.un_correct = answer.options - filtered_correct
+        answer.correct = filtered_correct
+        if filtered_correct:
+            answer.charget = (filtered_correct * 100) / answer.options
+        else:
+            answer.charget = 0
+    return render(request, 'dashboard/quizdetail.html', {'answers':answers})
