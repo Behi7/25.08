@@ -19,6 +19,7 @@
 								<div>
                                 	<h4 class="card-title">Testlar</h4>
 								</div>
+								<a href="{% url 'answerxlsx' id %}" class="btn btn-success">Excelga ko'chirish</a>
 							</div>
                            	<!-- tab-content -->	
 							<div class="tab-content" id="myTabContent-4">
@@ -28,6 +29,12 @@
 										<div class="table-responsive">
 											
 											<table class="table table-bordered table-responsive-sm">
+												<thead>
+													<th>#</th>
+													<th>Savol</th>
+													<th>Sizning javobingiz</th>
+													<th>To'g'ri javob</th>
+												</thead>
 												<tbody>
 													{% for answer in answerdetails %}
 													<tr>
@@ -38,6 +45,7 @@
                                                         {% else %}
                                                         <td style="color: rgb(255, 0, 0);">{{answer.user_choice}}</td>
                                                         {% endif %}
+														<td>{{answer.correct}}</td>
 													</tr>
 													{% endfor %}
 												</tbody>

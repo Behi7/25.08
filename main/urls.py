@@ -15,5 +15,7 @@ urlpatterns = [
     path('register', views.register_user, name='register'),
     path('quiz/<int:quiz_id>/createquestion/<int:question_id>/option/delete/<int:id>', views.deleteOption, name='deleteoption'),
     path('quiz/<int:quiz_id>/createquestion/<int:question_id>/option/update/<int:id>', views.updateoption, name='updateoption'),
-    path('quizdetail/<int:id>', views.quizdetail, name='detailquiz')
+    path('quizdetail/<int:id>', views.quizdetail, name='detailquiz'),
+    path('renderxlsx/<int:id>', views.renderxlsx, name='renderxlsx'),
+    path('answerxlsx/<int:id>', views.answerxlsx, name='answerxlsx'),
 ]
