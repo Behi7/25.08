@@ -43,8 +43,8 @@ def getQuiz(request, id):
 # def makeAnswer(request, id):
 #     quiz = models.Quiz.objects.get(id=id)
 #     answer = models.Answer.objects.create(quiz=quiz, author=request.user)
-#     pdf_file = canvas.Canvas("reportlab_example.pdf")  # Создаем объект Canvas
-#     pdf_file.setFont("Helvetica", 12)  # Устанавливаем шрифт и размер
+#     pdf_file = canvas.Canvas("reportlab_example.pdf")
+#     pdf_file.setFont("Helvetica", 12)
 #     for key, value in request.POST.items():
 #         if key.isdigit():
 #             print(models.Option.objects.get(id=int(value)))
@@ -52,13 +52,10 @@ def getQuiz(request, id):
 #                 answer = answer, 
 #                 question = models.Question.objects.get(id=int(key)), 
 #                 user_choice = models.Option.objects.get(id=int(value)))
-#             pdf_file.drawString(100, 700, object.question.name)  # Добавляем текст на страницу
-#             pdf_file.drawString(100, 700, object.user_choice.name)  # Добавляем текст на страницу
+#             pdf_file.drawString(100, 700, object.question.name)
+#             pdf_file.drawString(100, 700, object.user_choice.name)
 #     pdf_file.save()        
-        
 #     return redirect('answerlist')
-
-
 
 
 def makeAnswer(request, id):
